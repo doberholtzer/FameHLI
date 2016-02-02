@@ -1,5 +1,11 @@
 Revision history for Perl extension FameHLI.
 
+2.200 Sun Jan 31, 2016
+    FameHLI::API
+    Removed #defines for HRECRD and HITEM in the library as these were
+    removed from the interface.  This was necessary to allow the library
+    to compile.
+
 2.101 Sun Mar 20, 2005
     FameHLI::API
     Cfmwstr had an artificial limit of 255 characters on any string

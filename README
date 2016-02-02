@@ -1,5 +1,5 @@
 COPYRIGHT
-    Copyright (c) 2005 Dave Oberholtzer (daveo@obernet.com) All rights
+    Copyright (c) 2016 Dave Oberholtzer (daveo@obernet.com) All rights
     reserved. This program is free software; you can redistribute it and/or
     modify it under the same terms as Perl itself.
 
@@ -26,6 +26,11 @@ DISCLAIMER
     may try to tone it down a bit.
 
 CHANGES
+    2.200 is a quick update for Fame version 10.2 and 11.5.  Since there
+    were some #define variables removed from Fame, they needed to be removed
+    from here as well to allow the library to compile.  No other substantive
+    changes were made.
+
     2.101 fixes a problem with *FameHLI::API::Cfmwstr* where there was an
     artificial limit of 255 characters hardcoded. This limit is valid in
     another function (I don't rememeber which) but not here.

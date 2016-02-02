@@ -221,7 +221,6 @@ int		eprd;
 int		rng[3];
 int		numobs;
 int		i;
-I32		ix;
 AV		*rngarray;
 SV		*sv;
 
@@ -295,7 +294,6 @@ int		eprd;
 int		rng[3];
 int		numobs;
 int		i;
-I32		ix;
 AV		*rngarray;
 SV		*sv;
 
@@ -470,7 +468,6 @@ int		mode
 	PREINIT:
 int		dbkey;
 char	name[SMALLBUF];
-int		key;
 
 	CODE:
 		strcpy(name, dbname);
@@ -1277,7 +1274,6 @@ double	d_value;
 char	*s_value;
 float	*valptr;
 int		xlen;
-int		worked	=	TRUE;
 
 	CODE:
 		switch (atttype) {
@@ -1387,7 +1383,6 @@ char	*objnam
 char	*aliass
 
 	PREINIT:
-int		x;
 
 	CODE:
 		cfmsali(&status, dbkey, objnam, aliass);
@@ -1554,7 +1549,6 @@ int		inlen;
 int		outlen;
 char	tmp[2];
 char	*buff;
-int		cnt = 0;
 
 	CODE:
 		inlen = 1;
@@ -2142,9 +2136,6 @@ SV		*sv_freq
 
 	PREINIT:
 char	buffer[SMALLBUF];
-static	int	xx = 0;
-char	*thing;
-int		len;
 int		class;
 int		type;
 int		freq;
@@ -2261,18 +2252,13 @@ SV		**svptr;
 SV		*sv;
 SV		*sv2;
 I32		ix;
-int		len;
 int		rlen	=	0;
 int		rng[3];
 AV		*datarray;
 AV		*rngarray;
-AV		*tblarray;
 int		*iptr;
 float	*fptr;
 void	*vptr;
-int		*mitbl	=	NULL;
-float	*mftbl	=	NULL;
-double	*mdtbl	=	NULL;
 void	*tbl	=	NULL;
 int		class;
 int		type;
@@ -2282,8 +2268,6 @@ int		fprd;
 int		lyear;
 int		lprd;
 double	*dptr;
-double	dtmp;
-int		ii = 0;
 
 
 	CODE:
@@ -2607,7 +2591,6 @@ SV		*sv_inlen
 SV		*sv_out
 
 	PREINIT:
-int		i;
 int		worked	=	TRUE;
 SV		**svptr;
 SV		*sv;
@@ -2617,7 +2600,6 @@ int		rng[3];
 AV		*rngarray;
 char	mtbuff[3];
 char	*buff;
-char	*str;
 int		ismiss;
 int		inlen;
 int		outlen;
@@ -2909,8 +2891,7 @@ char	*source		=	NO_INIT
 
 	PREINIT:
 char	**dsrc = (char **)source;
-char	*localsrc = *dsrc;
-int		srclen, famelen, i;
+int		srclen, famelen;
 char	buffer[255];
 
 	CODE:
@@ -2962,12 +2943,8 @@ int		rng[3];
 AV		*datarray;
 int		*iptr;
 float	*fptr;
-void	*vptr;
 #
 AV		*tblarray;
-int		*mitbl	=	NULL;
-float	*mftbl	=	NULL;
-double	*mdtbl	=	NULL;
 void	*tbl	=	NULL;
 #
 int		class;
@@ -2985,7 +2962,6 @@ double	*dptr;
 		dptr = 0;
 		fptr = 0;
 		iptr = 0;
-		vptr = 0;
 
 ##		----------------------------------------------------------------------
 ##		First, let's see what type of data object we are writing.  This will

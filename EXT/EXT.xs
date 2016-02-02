@@ -19,9 +19,6 @@
 //***************************************************************************
 //***************************************************************************
 static	int		status = 0;
-static	char	errBuff[BIGBUF];
-static	int		errBuffLen = -1;
-static	int		xx_cnt = 0;
 
 
 //***************************************************************************
@@ -58,7 +55,6 @@ char	*ptr;
 char	*FormatDate(int	date, int freq, char *image, int fmonth, int flabel)
 {
 static	char	buf[SMALLBUF];
-int				len;
 
 		cfmdati(&status, freq, date, buf, image, fmonth, flabel);
 		if (status != HSUCC) {
@@ -84,9 +80,6 @@ char	*ptr;
 			break;
 		  case HFRMLA:
 			ptr = "FORMULA";
-			break;
-		  case HITEM:
-			ptr = "ITEM";
 			break;
 		  case HGLNAM:
 			ptr = "LNAME";
@@ -445,7 +438,7 @@ char	*ptr;
 			ptr = "Password specified without username";
 			break;
 		  case HLSERV:
-			ptr = "Lost FDPS server REMEVAL sent to (??)";
+			ptr = "Lost FDPS server REMEVAL sent to (\?\?)";
 			break;
 		  case HLRESV:
 			ptr = "Lost FDPS server reserved for REMEVAL";
@@ -561,7 +554,6 @@ char			*p;
 char	*TypeDesc(int code)
 {
 char	*ptr;
-int		x = HRMODE;
 
 		switch(code) {
 		  case HUNDFT:
@@ -584,9 +576,6 @@ int		x = HRMODE;
 			break;
 		  case HDATE:
 			ptr = "General DATE";
-			break;
-		  case HRECRD:
-			ptr = "RECORD";
 			break;
 		  default:
 			ptr = FreqDesc(code);
@@ -640,7 +629,6 @@ char	*ptr;
 //===========================================================================
 /* For DATE objects, the type is usually the frequency of the date; */
 /* HDATE is used only when the general type is required.            */
-/* Record types (HRECRD) are NOT supported in FORTRAN interface.    */
 //===========================================================================
 
 
@@ -1061,7 +1049,6 @@ int code
 ##
 ## For DATE objects, the type is usually the frequency of the date; */
 ## HDATE is used only when the general type is required.            */
-## Record types (HRECRD) are NOT supported in FORTRAN interface.    */
 ##===========================================================================
 
 

@@ -60,7 +60,7 @@ my		$missing = 0;
 ;#		------------------------------------------------------------------
 		if (!$ENV{STATICFAME}) {
 			$missing += 1
-				unless PrintCheck("libchli.so", -f "$ENV{HLI}/libchli.so");
+				unless PrintCheck("libchli.so", -f "$ENV{HLI}/64/libchli.so");
 			$missing += 1
 				unless PrintCheck("chli.lib", -f "$ENV{HLI}/chli.lib");
 			$missing--;
@@ -121,7 +121,7 @@ my		$fametest = 0;
 		WriteMakefile(
     		'NAME'			=>	'FameHLI::API',
     		'VERSION_FROM'	=>	'API.pm',
-    		'LIBS'			=>	["-L$ENV{HLI} -lchli"],
+    		'LIBS'			=>	["-L$ENV{HLI}/64 -lchli"],
     		'OBJECT'		=>	'API.o',
     		'DEFINE'		=>	$ENV{STATICFAME}?'-DCFMINI_EVERYWHERE':'',
     		'INC'			=>	"-I$ENV{HLI}",

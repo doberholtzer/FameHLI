@@ -125,7 +125,7 @@ require AutoLoader;
 @EXPORT = qw(
 );
 
-$VERSION = '2.101';
+$VERSION = '2.200';
 
 bootstrap FameHLI::API $VERSION;
 
@@ -478,6 +478,8 @@ This module was tested (at least) under the following conditions:
    - RedHat 9.0 / Perl 5.8.5 / gcc 3.2.2 / Fame 9.0.13
    - Fedora 3.0 / Perl 5.8.5 / gcc 3.4.2 / Fame 9.0.13
    - NT5/2000 / ActivePerl 5.6.0 / VC++ 6.0 / Fame 8.0.2
+   - Centos 7 / Perl 5.16.2 / gcc 4.8.5 / fame 10.2
+   - Centos 7 / Perl 5.16.2 / gcc 4.8.5 / fame 11.5
 
 It has NOT been succesfully tested on AIX.  If you would like to use
 it on AIX then either see if it works for you or let us know that

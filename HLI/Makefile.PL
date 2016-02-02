@@ -12,7 +12,7 @@ WriteMakefile(
     'NAME'		=> 'FameHLI::API::HLI',
     'VERSION_FROM'	=> 'HLI.pm',
     'PREREQ_PM'		=> {},
-    'LIBS'		=> ["-L$ENV{HLI} -lchli"],
+    'LIBS'		=> ["-L$ENV{HLI}/64 -lchli"],
 	'OBJECT'	=> 'HLI.o',
     'DEFINE'		=> '',
     'INC'		=> "-I$ENV{HLI}",

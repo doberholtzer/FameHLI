@@ -14,7 +14,7 @@ if (!$ENV{HLI}) {
 WriteMakefile(
     'NAME'	=> 'FameHLI::API::EXT',
     'VERSION_FROM' => 'EXT.pm',
-    'LIBS'	=> ["-L$ENV{HLI} -lchli"],
+    'LIBS'	=> ["-L$ENV{HLI}/64 -lchli"],
     'OBJECT' => 'EXT.o',
     'DEFINE'	=> $ENV{STATICFAME}?'-DCFMINI_EVERYWHERE':'',
     'INC'	=> "-I$ENV{HLI}",
